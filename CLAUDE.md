@@ -1,7 +1,7 @@
 # RentCAR — Car Rental Management System (ERP)
 
 ## Project Overview
-RentCAR is a full-stack car rental management ERP built for a single-location agency in Morocco. It manages fleet, clients, reservations, contracts, invoicing, payments, expenses, maintenance, and reporting. The system is bilingual (French/Arabic), responsive (desktop + mobile), and deployed to Vercel from day one.
+RentCAR is a full-stack car rental management ERP built for a single-location agency in Morocco. It manages fleet, clients, reservations, contracts, invoicing, payments, expenses, maintenance, and reporting. The system is bilingual (English/Arabic), responsive (desktop + mobile), and deployed to Vercel from day one.
 
 ## Tech Stack
 - **Framework:** Next.js 14+ (App Router, TypeScript, Server Components)
@@ -9,7 +9,7 @@ RentCAR is a full-stack car rental management ERP built for a single-location ag
 - **Database:** MongoDB Atlas (cloud) + Mongoose ODM
 - **Auth:** NextAuth.js v5 (Credentials provider, JWT strategy)
 - **Validation:** React Hook Form + Zod schemas
-- **i18n:** next-intl (French default + Arabic with full RTL)
+- **i18n:** next-intl (English default + Arabic with full RTL)
 - **Theme:** next-themes (dark / light / system)
 - **Charts:** Recharts (dashboard visualizations)
 - **Dates:** date-fns (formatting, calculations, locale-aware)
@@ -26,7 +26,7 @@ RentCAR is a full-stack car rental management ERP built for a single-location ag
 ## Key Constraints
 - Single user (no roles/permissions, just a login gate via NextAuth)
 - Single location (no multi-branch logic)
-- Bilingual: French (default) + Arabic (RTL)
+- Bilingual: English (default) + Arabic (RTL)
 - Responsive: desktop-first, fully usable on mobile/tablet
 - All monetary values in MAD (Moroccan Dirham)
 - Moroccan document types: CIN, permis de conduire
@@ -139,7 +139,7 @@ src/
 │   ├── use-reservations.ts
 │   └── use-debounce.ts
 ├── i18n/
-│   ├── fr.json                    # French translations
+│   ├── en.json                    # English translations
 │   ├── ar.json                    # Arabic translations
 │   └── config.ts                  # i18n setup
 └── middleware.ts                   # Auth protection + locale detection
@@ -314,7 +314,7 @@ export default mongoose.models.Vehicle || mongoose.model<IVehicle>("Vehicle", Ve
 
 ### i18n
 - All user-facing strings must come from translation files
-- Never hardcode French or Arabic text in components
+- Never hardcode English or Arabic text in components
 - Use `useTranslations()` hook in client components
 - Use `getTranslations()` in server components
 - Date formatting: `format(date, 'PPP', { locale })` with date-fns

@@ -5,9 +5,11 @@ import { Pencil, Phone, Mail, MapPin, CreditCard, Car, TrendingUp } from "lucide
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { StatusBadge } from "@/components/shared/status-badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { formatCurrency, formatDateShort } from "@/lib/utils";
+import { DocumentList } from "@/components/documents/document-list";
 import type { IClient } from "@/types";
 
 interface ClientDetailProps {
@@ -77,97 +79,110 @@ export function ClientDetail({ client, open, onClose, onEdit }: ClientDetailProp
           </div>
         </SheetHeader>
 
-        <div className="px-4 pb-6 space-y-5">
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-2">
-            <StatCard icon={Car} label={t("totalRentals")} value={String(client.totalRentals ?? 0)} />
-            <StatCard icon={TrendingUp} label={t("totalSpent")} value={formatCurrency(client.totalSpent ?? 0)} />
-          </div>
+        <div className="px-4 pb-6">
+          <Tabs defaultValue="details">
+            <TabsList className="w-full mb-4">
+              <TabsTrigger value="details" className="flex-1">{tc("details")}</TabsTrigger>
+              <TabsTrigger value="documents" className="flex-1">{tc("documents")}</TabsTrigger>
+            </TabsList>
 
-          <Separator />
+            <TabsContent value="details" className="space-y-5">
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-2">
+                <StatCard icon={Car} label={t("totalRentals")} value={String(client.totalRentals ?? 0)} />
+                <StatCard icon={TrendingUp} label={t("totalSpent")} value={formatCurrency(client.totalSpent ?? 0)} />
+              </div>
 
-          {/* Contact */}
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-              {t("contact")}
-            </p>
-            <div className="divide-y divide-border/50">
-              <DetailRow
-                label={t("phone")}
-                value={
-                  <a href={`tel:${client.phone}`} className="flex items-center gap-1 hover:underline">
-                    <Phone className="w-3 h-3" />
-                    {client.phone}
-                  </a>
-                }
-              />
-              <DetailRow
-                label={t("email")}
-                value={
-                  client.email ? (
-                    <a href={`mailto:${client.email}`} className="flex items-center gap-1 hover:underline">
-                      <Mail className="w-3 h-3" />
-                      {client.email}
-                    </a>
-                  ) : undefined
-                }
-              />
-              <DetailRow label={t("address")} value={client.address} />
-              <DetailRow label={t("city")} value={client.city} />
-              <DetailRow label={t("nationality")} value={client.nationality} />
-              <DetailRow label={t("emergencyContact")} value={client.emergencyContact} />
-            </div>
-          </div>
-
-          <Separator />
-
-          {/* Identity */}
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-              {t("identity")}
-            </p>
-            <div className="divide-y divide-border/50">
-              <DetailRow
-                label={t("cin")}
-                value={client.cin ? <span className="font-mono text-xs flex items-center gap-1"><CreditCard className="w-3 h-3" />{client.cin}</span> : undefined}
-              />
-              <DetailRow
-                label={t("passport")}
-                value={client.passport ? <span className="font-mono text-xs">{client.passport}</span> : undefined}
-              />
-              <DetailRow
-                label={t("drivingLicense")}
-                value={client.drivingLicense ? <span className="font-mono text-xs">{client.drivingLicense}</span> : undefined}
-              />
-              <DetailRow
-                label={t("licenseExpiry")}
-                value={client.licenseExpiry ? formatDateShort(client.licenseExpiry) : undefined}
-              />
-              <DetailRow
-                label={t("dateOfBirth")}
-                value={client.dateOfBirth ? formatDateShort(client.dateOfBirth) : undefined}
-              />
-            </div>
-          </div>
-
-          {client.notes && (
-            <>
               <Separator />
+
+              {/* Contact */}
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-                  {tc("notes")}
+                  {t("contact")}
                 </p>
-                <p className="text-sm">{client.notes}</p>
+                <div className="divide-y divide-border/50">
+                  <DetailRow
+                    label={t("phone")}
+                    value={
+                      <a href={`tel:${client.phone}`} className="flex items-center gap-1 hover:underline">
+                        <Phone className="w-3 h-3" />
+                        {client.phone}
+                      </a>
+                    }
+                  />
+                  <DetailRow
+                    label={t("email")}
+                    value={
+                      client.email ? (
+                        <a href={`mailto:${client.email}`} className="flex items-center gap-1 hover:underline">
+                          <Mail className="w-3 h-3" />
+                          {client.email}
+                        </a>
+                      ) : undefined
+                    }
+                  />
+                  <DetailRow label={t("address")} value={client.address} />
+                  <DetailRow label={t("city")} value={client.city} />
+                  <DetailRow label={t("nationality")} value={client.nationality} />
+                  <DetailRow label={t("emergencyContact")} value={client.emergencyContact} />
+                </div>
               </div>
-            </>
-          )}
 
-          <Separator />
+              <Separator />
 
-          <Button className="w-full" onClick={() => onEdit(client)}>
-            <Pencil className="w-4 h-4 mr-2" />
-            {t("edit")}
-          </Button>
+              {/* Identity */}
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                  {t("identity")}
+                </p>
+                <div className="divide-y divide-border/50">
+                  <DetailRow
+                    label={t("cin")}
+                    value={client.cin ? <span className="font-mono text-xs flex items-center gap-1"><CreditCard className="w-3 h-3" />{client.cin}</span> : undefined}
+                  />
+                  <DetailRow
+                    label={t("passport")}
+                    value={client.passport ? <span className="font-mono text-xs">{client.passport}</span> : undefined}
+                  />
+                  <DetailRow
+                    label={t("drivingLicense")}
+                    value={client.drivingLicense ? <span className="font-mono text-xs">{client.drivingLicense}</span> : undefined}
+                  />
+                  <DetailRow
+                    label={t("licenseExpiry")}
+                    value={client.licenseExpiry ? formatDateShort(client.licenseExpiry) : undefined}
+                  />
+                  <DetailRow
+                    label={t("dateOfBirth")}
+                    value={client.dateOfBirth ? formatDateShort(client.dateOfBirth) : undefined}
+                  />
+                </div>
+              </div>
+
+              {client.notes && (
+                <>
+                  <Separator />
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                      {tc("notes")}
+                    </p>
+                    <p className="text-sm">{client.notes}</p>
+                  </div>
+                </>
+              )}
+
+              <Separator />
+
+              <Button className="w-full" onClick={() => onEdit(client)}>
+                <Pencil className="w-4 h-4 mr-2" />
+                {t("edit")}
+              </Button>
+            </TabsContent>
+
+            <TabsContent value="documents">
+              <DocumentList entityType="client" entityId={client._id} compact />
+            </TabsContent>
+          </Tabs>
         </div>
       </SheetContent>
     </Sheet>

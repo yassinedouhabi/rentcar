@@ -87,6 +87,8 @@
     "total": "الإجمالي",
     "notes": "ملاحظات",
     "description": "الوصف",
+    "details": "التفاصيل",
+    "documents": "المستندات",
     "yes": "نعم",
     "no": "لا",
     "page": "صفحة",
@@ -230,6 +232,7 @@
     "extraCost": "تكلفة إضافية",
     "lateReturnWarning": "إرجاع متأخر: {days} يوم بعد التاريخ المتفق عليه",
     "returnVehicle": "إرجاع المركبة",
+    "downloadPdf": "تحميل PDF",
     "createFrom": "إنشاء من حجز",
     "contractNumber": "رقم العقد",
     "client": "العميل",
@@ -281,6 +284,7 @@
     "invoiceNumber": "رقم الفاتورة",
     "client": "العميل",
     "contract": "العقد",
+    "contractNumber": "رقم العقد",
     "amount": "قيمة الإيجار",
     "tax": "الضريبة",
     "totalAmount": "المبلغ الإجمالي",
@@ -320,6 +324,18 @@
     }
   },
   "expense": {
+    "subtitle": "{count} مصروف",
+    "addNew": "مصروف جديد",
+    "notFound": "لا مصاريف",
+    "notFoundDesc": "سجّل أول مصروف للبدء.",
+    "deleteConfirmDesc": "سيتم حذف المصروف نهائياً. لا يمكن التراجع عن هذا الإجراء.",
+    "add": "إضافة مصروف",
+    "edit": "تعديل المصروف",
+    "vehicleOptional": "المركبة (اختياري)",
+    "noVehicle": "مصروف عام",
+    "totalExpenses": "إجمالي المصاريف",
+    "dateFrom": "من",
+    "dateTo": "إلى",
     "vehicle": "المركبة",
     "category": "الفئة",
     "amount": "المبلغ",
@@ -335,7 +351,35 @@
       "other": "أخرى"
     }
   },
+  "cashflow": {
+    "totalIncome": "إجمالي الإيرادات",
+    "totalExpenses": "إجمالي المصاريف",
+    "netProfit": "صافي الربح",
+    "thisWeek": "هذا الأسبوع",
+    "thisMonth": "هذا الشهر",
+    "thisYear": "هذه السنة",
+    "income": "الإيرادات",
+    "expenses": "المصاريف",
+    "runningBalance": "الرصيد التراكمي",
+    "type": "النوع",
+    "reference": "المرجع",
+    "noTransactions": "لا معاملات",
+    "noTransactionsDesc": "ستظهر المدفوعات والمصاريف هنا.",
+    "incomeType": "إيراد",
+    "expenseType": "مصروف"
+  },
   "maintenance": {
+    "subtitle": "{count} سجل",
+    "addNew": "صيانة جديدة",
+    "notFound": "لا سجلات صيانة",
+    "notFoundDesc": "جدوّل أول صيانة للبدء.",
+    "deleteConfirmDesc": "سيتم حذف سجل الصيانة نهائياً. لا يمكن التراجع عن هذا الإجراء.",
+    "add": "إضافة صيانة",
+    "edit": "تعديل الصيانة",
+    "viewDetails": "تفاصيل الصيانة",
+    "selectVehicle": "اختر مركبة...",
+    "totalCost": "إجمالي تكاليف الصيانة",
+    "vehicleRentedError": "لا يمكن بدء الصيانة: هذه المركبة مؤجرة حالياً.",
     "vehicle": "المركبة",
     "type": "النوع",
     "description": "الوصف",
@@ -355,6 +399,184 @@
       "scheduled": "مجدول",
       "in_progress": "جار",
       "completed": "مكتمل"
+    }
+  },
+  "calendar": {
+    "today": "اليوم",
+    "vehicle": "المركبة",
+    "client": "العميل",
+    "noVehicles": "لا مركبات في الأسطول",
+    "noClient": "بدون عميل",
+    "noResults": "لا توجد مركبات تطابق البحث",
+    "clearFilters": "مسح الفلاتر",
+    "searchPlaceholder": "بحث عن مركبة...",
+    "days": "أيام",
+    "utilization": "نسبة استخدام الأسطول",
+    "view": {
+      "1w": "أ",
+      "2w": "أأ",
+      "1m": "ش",
+      "3m": "٣ش"
+    },
+    "viewFull": {
+      "1w": "أسبوع واحد",
+      "2w": "أسبوعان",
+      "1m": "شهر واحد",
+      "3m": "٣ أشهر"
+    },
+    "filter": {
+      "all": "الكل",
+      "available": "متاح",
+      "rented": "مؤجر",
+      "reserved": "محجوز",
+      "maintenance": "صيانة"
+    },
+    "legend": {
+      "pending": "معلق",
+      "confirmed": "مؤكد",
+      "active": "إيجار نشط",
+      "completed": "مكتمل",
+      "maintenance": "صيانة"
+    }
+  },
+  "document": {
+    "title": "المستندات",
+    "subtitle": "{count} مستند",
+    "pageDesc": "جميع الملفات المرفوعة للعملاء والمركبات والعقود",
+    "addNew": "رفع ملف",
+    "notFound": "لا مستندات",
+    "notFoundDesc": "ارفع ملفات للاحتفاظ بالمستندات المهمة.",
+    "upload": "رفع",
+    "uploading": "جار الرفع...",
+    "cancel": "الغاء",
+    "dragDrop": "اسحب وافلت الملف هنا",
+    "orBrowse": "او انقر للتصفح",
+    "maxSize": "5 MB كحد اقصى — JPG, PNG, PDF",
+    "category": "الفئة",
+    "fileName": "اسم الملف",
+    "fileSize": "الحجم",
+    "uploadedAt": "تاريخ الرفع",
+    "download": "تحميل",
+    "delete": "حذف",
+    "deleteConfirmDesc": "سيتم حذف هذا الملف نهائيا. لا يمكن التراجع عن هذا الاجراء.",
+    "errorSize": "الملف يتجاوز الحد الاقصى 5 MB.",
+    "errorType": "نوع الملف غير مسموح به. استخدم JPG او PNG او PDF.",
+    "errorUpload": "فشل الرفع. يرجى المحاولة مرة اخرى.",
+    "categories": {
+      "all": "جميع الفئات",
+      "id_copy": "نسخة الهوية",
+      "contract": "عقد",
+      "receipt": "وصل",
+      "photo": "صورة",
+      "other": "اخرى"
+    },
+    "entityTypes": {
+      "all": "جميع الكيانات",
+      "client": "العميل",
+      "vehicle": "المركبة",
+      "contract": "العقد"
+    }
+  },
+  "alerts": {
+    "title": "التنبيهات",
+    "subtitle": "إشعارات النظام التي تتطلب انتباهك",
+    "noAlerts": "لا تنبيهات نشطة — كل شيء على ما يرام",
+    "noAlertsDesc": "سيقوم النظام بإعلامك عند الحاجة إلى اتخاذ إجراء.",
+    "dismiss": "رفض",
+    "dismissAll": "رفض الكل",
+    "restoreAll": "استعادة المرفوضة",
+    "unread": "{count} تنبيه غير مقروء",
+    "view": "عرض",
+    "types": {
+      "danger": "حرج",
+      "warning": "تحذير",
+      "info": "معلومات"
+    },
+    "insurance": {
+      "title": "التامين منتهي قريبا",
+      "message": "{vehicle} ({plate}) — ينتهي خلال {days} يوم"
+    },
+    "inspection": {
+      "title": "الفحص التقني مستحق",
+      "message": "{vehicle} ({plate}) — مستحق خلال {days} يوم"
+    },
+    "overdueReturn": {
+      "title": "تاخر في الارجاع",
+      "message": "{vehicle} — {client} — متاخر {days} يوم"
+    },
+    "maintenanceOverdue": {
+      "title": "الصيانة متاخرة",
+      "message": "{vehicle} ({plate}) — متاخرة {days} يوم"
+    },
+    "unpaidInvoice": {
+      "title": "فاتورة غير مدفوعة",
+      "message": "فاتورة {number} — متاخرة {days} يوم"
+    },
+    "licenseExpiring": {
+      "title": "رخصة القيادة منتهية قريبا",
+      "message": "{client} — تنتهي خلال {days} يوم"
+    }
+  },
+  "report": {
+    "noData": "لا توجد بيانات لهذه الفترة",
+    "exportPdf": "تصدير PDF",
+    "apply": "تطبيق",
+    "tabs": {
+      "revenue": "الإيرادات",
+      "fleet": "الأسطول",
+      "clients": "العملاء",
+      "expenses": "المصاريف"
+    },
+    "period": {
+      "3m": "آخر 3 أشهر",
+      "6m": "آخر 6 أشهر",
+      "year": "هذه السنة",
+      "lastyear": "السنة الماضية"
+    },
+    "revenue": {
+      "total": "إجمالي الإيرادات",
+      "count": "التأجيرات",
+      "average": "متوسط التأجير",
+      "byPeriod": "الإيرادات حسب الفترة",
+      "byVehicle": "أفضل المركبات",
+      "byClient": "أفضل العملاء"
+    },
+    "fleet": {
+      "totalRevenue": "إجمالي الإيرادات",
+      "avgUtilization": "متوسط الاستخدام",
+      "maintenanceCost": "تكلفة الصيانة",
+      "utilization": "استخدام الأسطول",
+      "vehicle": "المركبة",
+      "rentals": "التأجيرات",
+      "days": "أيام التأجير",
+      "km": "كم مقطوعة",
+      "revenue": "الإيرادات",
+      "maintenance": "الصيانة",
+      "rate": "الاستخدام"
+    },
+    "clients": {
+      "total": "إجمالي العملاء",
+      "newThisMonth": "جدد هذا الشهر",
+      "newInRange": "جدد في الفترة",
+      "byType": "حسب نوع العميل",
+      "newPerMonth": "عملاء جدد / شهر",
+      "topClients": "أفضل العملاء",
+      "name": "الاسم",
+      "type": "النوع",
+      "rentals": "التأجيرات",
+      "spent": "المجموع المدفوع"
+    },
+    "expenses": {
+      "total": "إجمالي المصاريف",
+      "revenue": "الإيرادات",
+      "profit": "صافي الربح",
+      "margin": "هامش الربح",
+      "byCategory": "حسب الفئة",
+      "byMonth": "المصاريف الشهرية",
+      "byVehicle": "حسب المركبة",
+      "category": "الفئة",
+      "amount": "المبلغ",
+      "count": "العدد"
     }
   },
   "dashboard": {

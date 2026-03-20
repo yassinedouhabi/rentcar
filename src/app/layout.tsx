@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Rubik } from "next/font/google";
 import { cookies } from "next/headers";
 import { getLocale, getMessages } from "next-intl/server";
 import "./globals.css";
@@ -10,14 +10,14 @@ import { LocaleProvider } from "@/components/providers/locale-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const rubik = Rubik({
+  variable: "--font-rubik",
+  subsets: ["latin", "arabic"],
 });
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={dir}
-      className={`${geistSans.variable} ${geistMono.variable} h-full ${themeClass}`}
+      className={`${inter.variable} ${rubik.variable} h-full ${themeClass}`}
       suppressHydrationWarning
     >
       <body className="min-h-full bg-background text-foreground antialiased" suppressHydrationWarning>

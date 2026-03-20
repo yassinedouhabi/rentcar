@@ -87,6 +87,8 @@
     "total": "Total",
     "notes": "Notes",
     "description": "Description",
+    "details": "Details",
+    "documents": "Documents",
     "yes": "Yes",
     "no": "No",
     "page": "Page",
@@ -230,6 +232,7 @@
     "extraCost": "Extra cost",
     "lateReturnWarning": "Late return: {days} day(s) beyond the agreed end date",
     "returnVehicle": "Return vehicle",
+    "downloadPdf": "Download PDF",
     "createFrom": "Create from reservation",
     "contractNumber": "Contract #",
     "client": "Client",
@@ -281,6 +284,7 @@
     "invoiceNumber": "Invoice #",
     "client": "Client",
     "contract": "Contract",
+    "contractNumber": "Contract #",
     "amount": "Base rental",
     "tax": "Tax",
     "totalAmount": "Total amount",
@@ -320,6 +324,18 @@
     }
   },
   "expense": {
+    "subtitle": "{count} expense(s)",
+    "addNew": "New expense",
+    "notFound": "No expenses",
+    "notFoundDesc": "Record your first expense to get started.",
+    "deleteConfirmDesc": "The expense will be permanently deleted. This action is irreversible.",
+    "add": "Add expense",
+    "edit": "Edit expense",
+    "vehicleOptional": "Vehicle (optional)",
+    "noVehicle": "General expense",
+    "totalExpenses": "Total expenses",
+    "dateFrom": "From",
+    "dateTo": "To",
     "vehicle": "Vehicle",
     "category": "Category",
     "amount": "Amount",
@@ -335,7 +351,35 @@
       "other": "Other"
     }
   },
+  "cashflow": {
+    "totalIncome": "Total income",
+    "totalExpenses": "Total expenses",
+    "netProfit": "Net profit",
+    "thisWeek": "This week",
+    "thisMonth": "This month",
+    "thisYear": "This year",
+    "income": "Income",
+    "expenses": "Expenses",
+    "runningBalance": "Running balance",
+    "type": "Type",
+    "reference": "Reference",
+    "noTransactions": "No transactions",
+    "noTransactionsDesc": "Payments and expenses for this period will appear here.",
+    "incomeType": "Income",
+    "expenseType": "Expense"
+  },
   "maintenance": {
+    "subtitle": "{count} record(s)",
+    "addNew": "New maintenance",
+    "notFound": "No maintenance records",
+    "notFoundDesc": "Schedule your first maintenance to get started.",
+    "deleteConfirmDesc": "The maintenance record will be permanently deleted. This action is irreversible.",
+    "add": "Add maintenance",
+    "edit": "Edit maintenance",
+    "viewDetails": "Maintenance details",
+    "selectVehicle": "Select a vehicle...",
+    "totalCost": "Total maintenance cost",
+    "vehicleRentedError": "Cannot start maintenance: this vehicle is currently rented.",
     "vehicle": "Vehicle",
     "type": "Type",
     "description": "Description",
@@ -355,6 +399,184 @@
       "scheduled": "Scheduled",
       "in_progress": "In progress",
       "completed": "Completed"
+    }
+  },
+  "calendar": {
+    "today": "Today",
+    "vehicle": "Vehicle",
+    "client": "Client",
+    "noVehicles": "No vehicles in the fleet",
+    "noClient": "No client",
+    "noResults": "No vehicles match your search",
+    "clearFilters": "Clear filters",
+    "searchPlaceholder": "Search vehicles...",
+    "days": "days",
+    "utilization": "Fleet utilization",
+    "view": {
+      "1w": "1W",
+      "2w": "2W",
+      "1m": "1M",
+      "3m": "3M"
+    },
+    "viewFull": {
+      "1w": "1 Week",
+      "2w": "2 Weeks",
+      "1m": "1 Month",
+      "3m": "3 Months"
+    },
+    "filter": {
+      "all": "All",
+      "available": "Available",
+      "rented": "Rented",
+      "reserved": "Reserved",
+      "maintenance": "Maintenance"
+    },
+    "legend": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "active": "Active rental",
+      "completed": "Completed",
+      "maintenance": "Maintenance"
+    }
+  },
+  "document": {
+    "title": "Documents",
+    "subtitle": "{count} document(s)",
+    "pageDesc": "All uploaded files across clients, vehicles and contracts",
+    "addNew": "Upload",
+    "notFound": "No documents",
+    "notFoundDesc": "Upload files to keep track of important documents.",
+    "upload": "Upload",
+    "uploading": "Uploading...",
+    "cancel": "Cancel",
+    "dragDrop": "Drag and drop a file here",
+    "orBrowse": "or click to browse",
+    "maxSize": "Max 5 MB — JPG, PNG, PDF",
+    "category": "Category",
+    "fileName": "File name",
+    "fileSize": "Size",
+    "uploadedAt": "Uploaded",
+    "download": "Download",
+    "delete": "Delete",
+    "deleteConfirmDesc": "This file will be permanently deleted. This action cannot be undone.",
+    "errorSize": "File exceeds the 5 MB limit.",
+    "errorType": "File type not allowed. Use JPG, PNG or PDF.",
+    "errorUpload": "Upload failed. Please try again.",
+    "categories": {
+      "all": "All categories",
+      "id_copy": "ID Copy",
+      "contract": "Contract",
+      "receipt": "Receipt",
+      "photo": "Photo",
+      "other": "Other"
+    },
+    "entityTypes": {
+      "all": "All entities",
+      "client": "Client",
+      "vehicle": "Vehicle",
+      "contract": "Contract"
+    }
+  },
+  "alerts": {
+    "title": "Alerts",
+    "subtitle": "System notifications requiring your attention",
+    "noAlerts": "All clear — no active alerts",
+    "noAlertsDesc": "The system will notify you when action is required.",
+    "dismiss": "Dismiss",
+    "dismissAll": "Dismiss all",
+    "restoreAll": "Restore dismissed",
+    "unread": "{count} unread alert(s)",
+    "view": "View",
+    "types": {
+      "danger": "Critical",
+      "warning": "Warning",
+      "info": "Info"
+    },
+    "insurance": {
+      "title": "Insurance expiring",
+      "message": "{vehicle} ({plate}) — expires in {days} day(s)"
+    },
+    "inspection": {
+      "title": "Inspection due",
+      "message": "{vehicle} ({plate}) — due in {days} day(s)"
+    },
+    "overdueReturn": {
+      "title": "Overdue return",
+      "message": "{vehicle} — {client} — {days} day(s) overdue"
+    },
+    "maintenanceOverdue": {
+      "title": "Maintenance overdue",
+      "message": "{vehicle} ({plate}) — {days} day(s) overdue"
+    },
+    "unpaidInvoice": {
+      "title": "Unpaid invoice",
+      "message": "Invoice {number} — {days} day(s) past due"
+    },
+    "licenseExpiring": {
+      "title": "License expiring",
+      "message": "{client} — expires in {days} day(s)"
+    }
+  },
+  "report": {
+    "noData": "No data for this period",
+    "exportPdf": "Export PDF",
+    "apply": "Apply",
+    "tabs": {
+      "revenue": "Revenue",
+      "fleet": "Fleet",
+      "clients": "Clients",
+      "expenses": "Expenses"
+    },
+    "period": {
+      "3m": "Last 3 months",
+      "6m": "Last 6 months",
+      "year": "This year",
+      "lastyear": "Last year"
+    },
+    "revenue": {
+      "total": "Total revenue",
+      "count": "Rentals",
+      "average": "Avg. per rental",
+      "byPeriod": "Revenue by period",
+      "byVehicle": "Top vehicles",
+      "byClient": "Top clients"
+    },
+    "fleet": {
+      "totalRevenue": "Total revenue",
+      "avgUtilization": "Avg. utilization",
+      "maintenanceCost": "Maintenance cost",
+      "utilization": "Fleet utilization",
+      "vehicle": "Vehicle",
+      "rentals": "Rentals",
+      "days": "Days rented",
+      "km": "Km driven",
+      "revenue": "Revenue",
+      "maintenance": "Maintenance",
+      "rate": "Utilization"
+    },
+    "clients": {
+      "total": "Total clients",
+      "newThisMonth": "New this month",
+      "newInRange": "New in period",
+      "byType": "By client type",
+      "newPerMonth": "New clients / month",
+      "topClients": "Top clients",
+      "name": "Name",
+      "type": "Type",
+      "rentals": "Rentals",
+      "spent": "Total spent"
+    },
+    "expenses": {
+      "total": "Total expenses",
+      "revenue": "Revenue",
+      "profit": "Net profit",
+      "margin": "Profit margin",
+      "byCategory": "By category",
+      "byMonth": "Monthly expenses",
+      "byVehicle": "By vehicle",
+      "category": "Category",
+      "amount": "Amount",
+      "count": "Count"
     }
   },
   "dashboard": {

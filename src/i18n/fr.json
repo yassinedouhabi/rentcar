@@ -247,6 +247,18 @@
     }
   },
   "expense": {
+    "subtitle": "{count} dépense(s)",
+    "addNew": "Nouvelle dépense",
+    "notFound": "Aucune dépense",
+    "notFoundDesc": "Enregistrez votre première dépense pour commencer.",
+    "deleteConfirmDesc": "La dépense sera définitivement supprimée. Cette action est irréversible.",
+    "add": "Ajouter une dépense",
+    "edit": "Modifier la dépense",
+    "vehicleOptional": "Véhicule (optionnel)",
+    "noVehicle": "Dépense générale",
+    "totalExpenses": "Total des dépenses",
+    "dateFrom": "Du",
+    "dateTo": "Au",
     "vehicle": "Véhicule",
     "category": "Catégorie",
     "amount": "Montant",
@@ -261,6 +273,23 @@
       "parking": "Parking",
       "other": "Autre"
     }
+  },
+  "cashflow": {
+    "totalIncome": "Revenus totaux",
+    "totalExpenses": "Dépenses totales",
+    "netProfit": "Bénéfice net",
+    "thisWeek": "Cette semaine",
+    "thisMonth": "Ce mois",
+    "thisYear": "Cette année",
+    "income": "Revenus",
+    "expenses": "Dépenses",
+    "runningBalance": "Solde cumulé",
+    "type": "Type",
+    "reference": "Référence",
+    "noTransactions": "Aucune transaction",
+    "noTransactionsDesc": "Les paiements et dépenses de la période apparaîtront ici.",
+    "incomeType": "Revenu",
+    "expenseType": "Dépense"
   },
   "maintenance": {
     "vehicle": "Véhicule",
@@ -282,6 +311,68 @@
       "scheduled": "Planifié",
       "in_progress": "En cours",
       "completed": "Terminé"
+    }
+  },
+  "report": {
+    "noData": "Aucune donnée pour cette période",
+    "exportPdf": "Exporter PDF",
+    "apply": "Appliquer",
+    "tabs": {
+      "revenue": "Revenus",
+      "fleet": "Flotte",
+      "clients": "Clients",
+      "expenses": "Dépenses"
+    },
+    "period": {
+      "3m": "3 derniers mois",
+      "6m": "6 derniers mois",
+      "year": "Cette année",
+      "lastyear": "Année dernière"
+    },
+    "revenue": {
+      "total": "Total revenus",
+      "count": "Locations",
+      "average": "Moy. par location",
+      "byPeriod": "Revenus par période",
+      "byVehicle": "Top véhicules",
+      "byClient": "Top clients"
+    },
+    "fleet": {
+      "totalRevenue": "Total revenus",
+      "avgUtilization": "Utilisation moy.",
+      "maintenanceCost": "Coût maintenance",
+      "utilization": "Utilisation flotte",
+      "vehicle": "Véhicule",
+      "rentals": "Locations",
+      "days": "Jours loués",
+      "km": "Km parcourus",
+      "revenue": "Revenus",
+      "maintenance": "Maintenance",
+      "rate": "Utilisation"
+    },
+    "clients": {
+      "total": "Total clients",
+      "newThisMonth": "Nouveaux ce mois",
+      "newInRange": "Nouveaux sur période",
+      "byType": "Par type de client",
+      "newPerMonth": "Nouveaux clients / mois",
+      "topClients": "Top clients",
+      "name": "Nom",
+      "type": "Type",
+      "rentals": "Locations",
+      "spent": "Total dépensé"
+    },
+    "expenses": {
+      "total": "Total dépenses",
+      "revenue": "Revenus",
+      "profit": "Bénéfice net",
+      "margin": "Marge bénéficiaire",
+      "byCategory": "Par catégorie",
+      "byMonth": "Dépenses mensuelles",
+      "byVehicle": "Par véhicule",
+      "category": "Catégorie",
+      "amount": "Montant",
+      "count": "Nombre"
     }
   },
   "dashboard": {
@@ -318,5 +409,43 @@
     "actCreate": "Création",
     "actUpdate": "Modification",
     "actDelete": "Suppression"
+  },
+  "calendar": {
+    "today": "Aujourd'hui",
+    "vehicle": "Véhicule",
+    "client": "Client",
+    "noVehicles": "Aucun véhicule dans la flotte",
+    "noClient": "Sans client",
+    "noResults": "Aucun véhicule ne correspond à la recherche",
+    "clearFilters": "Effacer les filtres",
+    "searchPlaceholder": "Rechercher un véhicule...",
+    "days": "jours",
+    "utilization": "Taux d'utilisation",
+    "view": {
+      "1w": "1S",
+      "2w": "2S",
+      "1m": "1M",
+      "3m": "3M"
+    },
+    "viewFull": {
+      "1w": "1 Semaine",
+      "2w": "2 Semaines",
+      "1m": "1 Mois",
+      "3m": "3 Mois"
+    },
+    "filter": {
+      "all": "Tous",
+      "available": "Disponible",
+      "rented": "Loué",
+      "reserved": "Réservé",
+      "maintenance": "Maintenance"
+    },
+    "legend": {
+      "pending": "En attente",
+      "confirmed": "Confirmé",
+      "active": "Location active",
+      "completed": "Terminé",
+      "maintenance": "Maintenance"
+    }
   }
 }

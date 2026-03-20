@@ -5,8 +5,10 @@ import { Pencil, Calendar, Gauge, Fuel, Hash, FileText } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { StatusBadge } from "@/components/shared/status-badge";
 import { formatCurrency, formatDateShort } from "@/lib/utils";
+import { DocumentList } from "@/components/documents/document-list";
 import type { IVehicle, VehicleStatus } from "@/types";
 
 interface VehicleDetailProps {
@@ -50,76 +52,89 @@ export function VehicleDetail({ vehicle, open, onClose, onEdit }: VehicleDetailP
           </div>
         </SheetHeader>
 
-        <div className="px-4 pb-6 space-y-5">
-          {/* General */}
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-              {tc("general")}
-            </p>
-            <div className="divide-y divide-border/50">
-              <DetailRow label={t("brand")} value={vehicle.brand} />
-              <DetailRow label={t("model")} value={vehicle.model} />
-              <DetailRow label={t("year")} value={vehicle.year} />
-              <DetailRow label={t("color")} value={vehicle.color} />
-              <DetailRow label={t("fuel")} value={vehicle.fuel} />
-              <DetailRow label={t("plate")} value={<span className="font-mono">{vehicle.plate}</span>} />
-            </div>
-          </div>
+        <div className="px-4 pb-6">
+          <Tabs defaultValue="details">
+            <TabsList className="w-full mb-4">
+              <TabsTrigger value="details" className="flex-1">{tc("details")}</TabsTrigger>
+              <TabsTrigger value="documents" className="flex-1">{tc("documents")}</TabsTrigger>
+            </TabsList>
 
-          <Separator />
-
-          {/* Technical */}
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-              {tc("technical")}
-            </p>
-            <div className="divide-y divide-border/50">
-              <DetailRow
-                label={t("mileage")}
-                value={vehicle.mileage != null ? `${new Intl.NumberFormat("fr-MA").format(vehicle.mileage)} km` : undefined}
-              />
-              <DetailRow label={t("vin")} value={vehicle.vin ? <span className="font-mono text-xs">{vehicle.vin}</span> : undefined} />
-              <DetailRow
-                label={t("technicalInspection")}
-                value={vehicle.technicalInspection ? formatDateShort(vehicle.technicalInspection) : undefined}
-              />
-            </div>
-          </div>
-
-          <Separator />
-
-          {/* Financial */}
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-              {tc("financial")}
-            </p>
-            <div className="divide-y divide-border/50">
-              <DetailRow label={t("dailyRate")} value={formatCurrency(vehicle.dailyRate)} />
-              <DetailRow
-                label={t("insuranceExpiry")}
-                value={vehicle.insuranceExpiry ? formatDateShort(vehicle.insuranceExpiry) : undefined}
-              />
-            </div>
-          </div>
-
-          {vehicle.notes && (
-            <>
-              <Separator />
+            <TabsContent value="details" className="space-y-5">
+              {/* General */}
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-                  {tc("notes")}
+                  {tc("general")}
                 </p>
-                <p className="text-sm">{vehicle.notes}</p>
+                <div className="divide-y divide-border/50">
+                  <DetailRow label={t("brand")} value={vehicle.brand} />
+                  <DetailRow label={t("model")} value={vehicle.model} />
+                  <DetailRow label={t("year")} value={vehicle.year} />
+                  <DetailRow label={t("color")} value={vehicle.color} />
+                  <DetailRow label={t("fuel")} value={vehicle.fuel} />
+                  <DetailRow label={t("plate")} value={<span className="font-mono">{vehicle.plate}</span>} />
+                </div>
               </div>
-            </>
-          )}
 
-          <Separator />
+              <Separator />
 
-          <Button className="w-full" onClick={() => onEdit(vehicle)}>
-            <Pencil className="w-4 h-4 mr-2" />
-            {t("edit")}
-          </Button>
+              {/* Technical */}
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                  {tc("technical")}
+                </p>
+                <div className="divide-y divide-border/50">
+                  <DetailRow
+                    label={t("mileage")}
+                    value={vehicle.mileage != null ? `${new Intl.NumberFormat("fr-MA").format(vehicle.mileage)} km` : undefined}
+                  />
+                  <DetailRow label={t("vin")} value={vehicle.vin ? <span className="font-mono text-xs">{vehicle.vin}</span> : undefined} />
+                  <DetailRow
+                    label={t("technicalInspection")}
+                    value={vehicle.technicalInspection ? formatDateShort(vehicle.technicalInspection) : undefined}
+                  />
+                </div>
+              </div>
+
+              <Separator />
+
+              {/* Financial */}
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                  {tc("financial")}
+                </p>
+                <div className="divide-y divide-border/50">
+                  <DetailRow label={t("dailyRate")} value={formatCurrency(vehicle.dailyRate)} />
+                  <DetailRow
+                    label={t("insuranceExpiry")}
+                    value={vehicle.insuranceExpiry ? formatDateShort(vehicle.insuranceExpiry) : undefined}
+                  />
+                </div>
+              </div>
+
+              {vehicle.notes && (
+                <>
+                  <Separator />
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                      {tc("notes")}
+                    </p>
+                    <p className="text-sm">{vehicle.notes}</p>
+                  </div>
+                </>
+              )}
+
+              <Separator />
+
+              <Button className="w-full" onClick={() => onEdit(vehicle)}>
+                <Pencil className="w-4 h-4 mr-2" />
+                {t("edit")}
+              </Button>
+            </TabsContent>
+
+            <TabsContent value="documents">
+              <DocumentList entityType="vehicle" entityId={vehicle._id} compact />
+            </TabsContent>
+          </Tabs>
         </div>
       </SheetContent>
     </Sheet>

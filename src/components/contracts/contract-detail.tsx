@@ -1,8 +1,11 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Download } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { DocumentList } from "@/components/documents/document-list";
 import { StatusBadge } from "@/components/shared/status-badge";
 import { formatCurrency, formatDateShort } from "@/lib/utils";
 import type { IClient, IVehicle, IReservation } from "@/types";
@@ -47,13 +50,30 @@ export function ContractDetail({ contract, open, onClose, onReturn }: ContractDe
     <Sheet open={open} onOpenChange={(o) => !o && onClose()}>
       <SheetContent className="w-full sm:max-w-lg overflow-y-auto">
         <SheetHeader className="pr-8">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 flex-wrap">
             <SheetTitle className="font-mono">{contract.contractNumber}</SheetTitle>
             <StatusBadge status={contract.status} label={t(`statuses.${contract.status}` as Parameters<typeof t>[0])} />
+            <a
+              href={`/api/contracts/${contract._id}/pdf`}
+              download={`contrat-${contract.contractNumber}.pdf`}
+              className="ml-auto inline-flex items-center gap-1.5 h-8 px-3 rounded-md border border-border bg-background hover:bg-muted text-xs font-medium text-foreground transition-colors"
+            >
+              <Download className="w-3.5 h-3.5" />
+              {t("downloadPdf")}
+            </a>
           </div>
         </SheetHeader>
 
-        <div className="px-4 pb-6 space-y-1">
+        <div className="px-4 pb-6">
+          <Tabs defaultValue="details">
+            <TabsList className="w-full mb-4">
+              <TabsTrigger value="details" className="flex-1">{tc("details")}</TabsTrigger>
+              <TabsTrigger value="documents" className="flex-1">{tc("documents")}</TabsTrigger>
+            </TabsList>
+            <TabsContent value="documents">
+              <DocumentList entityType="contract" entityId={contract._id} compact />
+            </TabsContent>
+          <TabsContent value="details" className="space-y-1">
           {/* Client */}
           <SectionTitle>{t("client")}</SectionTitle>
           {client ? (
@@ -165,6 +185,8 @@ export function ContractDetail({ contract, open, onClose, onReturn }: ContractDe
               </button>
             </>
           )}
+          </TabsContent>
+          </Tabs>
         </div>
       </SheetContent>
     </Sheet>

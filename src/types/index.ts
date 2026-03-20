@@ -140,6 +140,22 @@ export interface IMaintenance {
   updatedAt: Date | string;
 }
 
+export type DocumentCategory = "id_copy" | "contract" | "receipt" | "photo" | "other";
+export type DocumentEntityType = "client" | "vehicle" | "contract";
+
+export interface IDocument {
+  _id: string;
+  entityType: DocumentEntityType;
+  entityId: string;
+  fileName: string;
+  gridfsId: string;
+  fileUrl: string; // computed by API: /api/documents/:id/download
+  fileSize: number;
+  mimeType: string;
+  category: DocumentCategory;
+  uploadedAt: Date | string;
+}
+
 export interface IAuditLog {
   _id: string;
   action: "create" | "update" | "delete";

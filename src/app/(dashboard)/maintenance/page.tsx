@@ -1,9 +1,5 @@
-import { getTranslations } from "next-intl/server";
+import { MaintenanceTable } from "@/components/maintenance/maintenance-table";
 
-export default async function Page() {
-  return (
-    <div className="space-y-4">
-      <p className="text-muted-foreground">Coming soon — Phase 2+</p>
-    </div>
-  );
+export default function MaintenancePage() {
+  return <MaintenanceTable />;
 }
