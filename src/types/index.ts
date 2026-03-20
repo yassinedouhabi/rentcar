@@ -156,6 +156,23 @@ export interface IDocument {
   uploadedAt: Date | string;
 }
 
+export interface ISettings {
+  _id: string;
+  agencyName: string;
+  agencyAddress: string;
+  agencyPhone: string;
+  agencyEmail: string;
+  agencyLogo: string;
+  currency: string;
+  defaultLanguage: string;
+  taxRate: number;
+  lateReturnPenaltyRate: number;
+  invoiceNotes: string;
+  invoicePrefix: string;
+  contractPrefix: string;
+  updatedAt: Date | string;
+}
+
 export interface IAuditLog {
   _id: string;
   action: "create" | "update" | "delete";

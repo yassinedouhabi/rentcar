@@ -447,5 +447,73 @@
       "completed": "Terminé",
       "maintenance": "Maintenance"
     }
+  },
+  "settings": {
+    "agency": {
+      "title": "Informations de l'Agence",
+      "desc": "Vos coordonnées publiques, affichées sur les factures et contrats",
+      "name": "Nom de l'agence",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "logo": "Logo",
+      "logoHint": "JPG, PNG ou SVG — max 2 Mo",
+      "uploadLogo": "Uploader un logo",
+      "removeLogo": "Supprimer"
+    },
+    "prefs": {
+      "title": "Préférences",
+      "desc": "Langue d'affichage, thème et paramètres financiers par défaut",
+      "language": "Langue par défaut",
+      "theme": "Thème",
+      "themeDark": "Sombre",
+      "themeLight": "Clair",
+      "themeSystem": "Système",
+      "currency": "Symbole de devise",
+      "taxRate": "Taux de TVA",
+      "taxRateHint": "Appliqué sur les nouvelles factures",
+      "lateReturnPenalty": "Pénalité de retard",
+      "lateReturnPenaltyHint": "Par jour au-delà de la date de retour convenue"
+    },
+    "invoicing": {
+      "title": "Facturation",
+      "desc": "Conditions par défaut et préfixes de numérotation",
+      "invoicePrefix": "Préfixe numéro de facture",
+      "contractPrefix": "Préfixe numéro de contrat",
+      "prefixHint": "Utilisé pour la numérotation automatique (ex. INV-2025-0001)",
+      "notes": "Mentions légales par défaut",
+      "notesHint": "Imprimées en bas de chaque facture",
+      "notesPlaceholder": "Paiement à 30 jours. Merci pour votre confiance."
+    },
+    "security": {
+      "title": "Sécurité",
+      "desc": "Modifier le mot de passe administrateur",
+      "currentPassword": "Mot de passe actuel",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Confirmer le nouveau mot de passe",
+      "passwordHint": "Minimum 8 caractères",
+      "changePassword": "Changer le mot de passe"
+    },
+    "data": {
+      "title": "Données",
+      "desc": "Exporter ou initialiser votre base de données",
+      "exportTitle": "Exporter toutes les données",
+      "exportDesc": "Télécharger toutes les collections en un seul fichier JSON",
+      "exportBtn": "Exporter JSON",
+      "seedTitle": "Données de démo",
+      "seedDesc": "Remplir la base de données avec des véhicules, clients et réservations exemples",
+      "seedBtn": "Insérer données démo"
+    },
+    "savedAgency": "Informations de l'agence enregistrées",
+    "savedPrefs": "Préférences enregistrées",
+    "savedInvoicing": "Paramètres de facturation enregistrés",
+    "passwordChanged": "Mot de passe modifié avec succès",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères",
+    "wrongCurrentPassword": "Mot de passe actuel incorrect",
+    "logoTooLarge": "Le logo ne doit pas dépasser 2 Mo",
+    "exportSuccess": "Export téléchargé",
+    "seedSuccess": "Données démo ajoutées : {vehicles} véhicules, {clients} clients",
+    "alreadySeeded": "La base de données contient déjà des données — initialisation annulée"
   }
 }

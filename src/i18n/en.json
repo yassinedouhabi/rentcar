@@ -613,5 +613,73 @@
     "actCreate": "Created",
     "actUpdate": "Updated",
     "actDelete": "Deleted"
+  },
+  "settings": {
+    "agency": {
+      "title": "Agency Information",
+      "desc": "Your agency's public details, shown on invoices and contracts",
+      "name": "Agency name",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "logo": "Logo",
+      "logoHint": "JPG, PNG or SVG — max 2 MB",
+      "uploadLogo": "Upload logo",
+      "removeLogo": "Remove"
+    },
+    "prefs": {
+      "title": "Preferences",
+      "desc": "Display language, theme and default financial settings",
+      "language": "Default language",
+      "theme": "Theme",
+      "themeDark": "Dark",
+      "themeLight": "Light",
+      "themeSystem": "System",
+      "currency": "Currency symbol",
+      "taxRate": "Tax rate",
+      "taxRateHint": "Applied on new invoices",
+      "lateReturnPenalty": "Late return penalty",
+      "lateReturnPenaltyHint": "Per day beyond agreed return date"
+    },
+    "invoicing": {
+      "title": "Invoicing",
+      "desc": "Default terms and number prefixes for invoices and contracts",
+      "invoicePrefix": "Invoice number prefix",
+      "contractPrefix": "Contract number prefix",
+      "prefixHint": "Used for auto-generated numbers (e.g. INV-2025-0001)",
+      "notes": "Default invoice notes",
+      "notesHint": "Printed at the bottom of every invoice",
+      "notesPlaceholder": "Payment due within 30 days. Thank you for your business."
+    },
+    "security": {
+      "title": "Security",
+      "desc": "Change the administrator password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "passwordHint": "Minimum 8 characters",
+      "changePassword": "Change password"
+    },
+    "data": {
+      "title": "Data",
+      "desc": "Export or seed your database",
+      "exportTitle": "Export all data",
+      "exportDesc": "Download all collections as a single JSON file",
+      "exportBtn": "Export JSON",
+      "seedTitle": "Seed demo data",
+      "seedDesc": "Populate the database with sample vehicles, clients and reservations",
+      "seedBtn": "Seed demo data"
+    },
+    "savedAgency": "Agency information saved",
+    "savedPrefs": "Preferences saved",
+    "savedInvoicing": "Invoicing settings saved",
+    "passwordChanged": "Password changed successfully",
+    "passwordMismatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "wrongCurrentPassword": "Current password is incorrect",
+    "logoTooLarge": "Logo file must be under 2 MB",
+    "exportSuccess": "Export downloaded",
+    "seedSuccess": "Demo data added: {vehicles} vehicles, {clients} clients",
+    "alreadySeeded": "Database already contains data — seed aborted"
   }
 }
